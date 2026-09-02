@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Výběr technologií – IT Projekt</title>
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="node_modules/tom-select/dist/css/tom-select.bootstrap5.min.css">
+</head>
+<body class="d-flex flex-column min-vh-100 bg-light">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html"><i class="fa-solid fa-code me-2"></i>WebProject</a>
+      <div class="navbar-nav ms-auto">
+        <a class="nav-link" href="index.html">Domů</a>
+        <a class="nav-link active" href="registrace.html">Registrace do kurzu</a>
+        <a class="nav-link" href="kontakt.html">Kontakt</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container my-5" style="max-width: 650px;">
+    <div class="card shadow-sm p-4">
+      <h2 class="card-title mb-3"><i class="fa-solid fa-graduation-cap me-2"></i>Zápis do workshopů</h2>
+      <p class="text-muted">Zvolte si zaměření a minimálně jednu technologii, kterou se chcete naučit.</p>
+
+      <form action="#" method="POST" id="courseForm">
+        <div class="mb-3">
+          <label for="studentName" class="form-label">Jméno a příjmení:</label>
+          <input type="text" class="form-control" id="studentName" required>
+        </div>
+
+        <div class="mb-4">
+          <label for="techSelect" class="form-label">Vyberte technologie (povinné, lze zvolit více):</label>
+          <select id="techSelect" name="technologies[]" multiple required>
+            <option value="" disabled selected>Vyberte technologie...</option>
+            <option value="html-css">HTML5 & Moderní CSS</option>
+            <option value="js">JavaScript ES6+</option>
+            <option value="php">PHP & Composer</option>
+            <option value="python">Python & Flask</option>
+            <option value="sql">Databáze a MySQL</option>
+            <option value="git">Git & GitHub</option>
+          </select>
+          <div class="form-text">Můžete vyhledávat psaním nebo naklikat více položek.</div>
+        </div>
+
+        <button type="submit" class="btn btn-success w-100">
+          <i class="fa-solid fa-check me-1"></i>Odeslat přihlášku
+        </button>
+      </form>
+    </div>
+  </main>
+
+  <footer class="bg-dark text-white text-center py-3 mt-auto">
+    <a href="dokumentace.pdf" target="_blank" class="text-info text-decoration-none">
+      <i class="fa-solid fa-file-pdf me-1"></i>Dokumentace k projektu (PDF)
+    </a>
+  </footer>
+
+  <script src="node_modules/tom-select/dist/js/tom-select.complete.min.js"></script>
+  <script>
+    new TomSelect("#techSelect", {
+      plugins: ['remove_button'],
+      placeholder: 'Vyberte technologie...',
+      maxOptions: 50,
+      closeAfterSelect: false
+    });
+  </script>
+</body>
+</html>

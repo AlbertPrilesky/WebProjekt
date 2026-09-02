@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontakt – IT Projekt</title>
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+</head>
+<body class="d-flex flex-column min-vh-100 bg-light">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html"><i class="fa-solid fa-code me-2"></i>WebProject</a>
+      <div class="navbar-nav ms-auto">
+        <a class="nav-link" href="index.html">Domů</a>
+        <a class="nav-link" href="registrace.html">Registrace do kurzu</a>
+        <a class="nav-link active" href="kontakt.html">Kontakt</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container my-5" style="max-width: 750px;">
+    <div class="card shadow-sm p-4">
+      <h2 class="card-title mb-4"><i class="fa-solid fa-envelope me-2"></i>Kontaktní formulář</h2>
+      <form action="#" method="POST">
+        <div class="mb-3">
+          <label for="email" class="form-label">E-mailová adresa:</label>
+          <input type="email" class="form-control" id="email" name="email" placeholder="jmeno@priklad.cz" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="editor" class="form-label">Zpráva (WYSIWYG editor):</label>
+          <textarea id="editor" name="message" rows="8">Zde napište svůj dotaz...</textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">
+          <i class="fa-solid fa-paper-plane me-1"></i>Odeslat zprávu
+        </button>
+      </form>
+    </div>
+  </main>
+
+  <footer class="bg-dark text-white text-center py-3 mt-auto">
+    <a href="dokumentace.pdf" target="_blank" class="text-info text-decoration-none">
+      <i class="fa-solid fa-file-pdf me-1"></i>Dokumentace k projektu (PDF)
+    </a>
+  </footer>
+
+  <script src="node_modules/tinymce/tinymce.min.js"></script>
+  <script>
+    tinymce.init({
+      selector: '#editor',
+      license_key: 'gpl',
+      menubar: false,
+      plugins: 'lists link',
+      toolbar: 'undo redo | bold italic underline | bullist numlist | link'
+    });
+  </script>
+</body>
+</html>
